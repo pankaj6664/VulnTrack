@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 04:43:05</sys_created_on>
+        <sys_id>b34954095323121052831ab0a0490e31</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1284814_demo_in_app_configuration.admin</sys_name>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope>
+        <sys_security_acl display_value="x_1284814_demo_in_app_configuration">b74954095323121052831ab0a0490e2e</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_b34954095323121052831ab0a0490e31</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 04:43:05</sys_updated_on>
+        <sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</application>
+        <file_path/>
+        <instance_id>1a1e816c1b5546d019254089bd4bcb34</instance_id>
+        <instance_name>dev251312</instance_name>
+        <name>sys_security_acl_role_b34954095323121052831ab0a0490e31</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-04 04:43:05</sys_created_on><sys_id>b34954095323121052831ab0a0490e31</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1284814_demo_in_app_configuration.admin</sys_name><sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package><sys_policy/><sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope><sys_security_acl display_value="x_1284814_demo_in_app_configuration">b74954095323121052831ab0a0490e2e</sys_security_acl><sys_update_name>sys_security_acl_role_b34954095323121052831ab0a0490e31</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-04 04:43:05</sys_updated_on><sys_user_role display_value="admin" name="admin">2831a114c611228501d4ea6c309d626d</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1473558883</payload_hash>
+        <record_name>x_1284814_demo_in_app_configuration.admin</record_name>
+        <reverted_from/>
+        <source>f51950815323121052831ab0a0490eb7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 04:43:05</sys_created_on>
+        <sys_id>3f4954095323121052831ab0a0490e33</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194cf44e3200000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 04:43:05</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>33495409942312106185b2a8d49efe33</update_guid>
+        <update_guid_history>33495409942312106185b2a8d49efe33:-1473558883</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1284814_demo_in_app_configuration.admin">511ad4495323121052831ab0a0490ef2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 04:46:29</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>72861bef514e4f98b357d68bb0176e29</sys_id>
+        <sys_metadata>b34954095323121052831ab0a0490e31</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1284814_demo_in_app_configuration.admin</sys_name>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_parent display_value="">b74954095323121052831ab0a0490e2e</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope>
+        <sys_scope_delete display_value="">43a0ea6ff1c54683974c9dffdae54559</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_b34954095323121052831ab0a0490e31</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_b34954095323121052831ab0a0490e31">3f4954095323121052831ab0a0490e33</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 04:46:29</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

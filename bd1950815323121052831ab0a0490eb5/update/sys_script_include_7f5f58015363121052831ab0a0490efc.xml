@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_1284814_demo_in.NvdAPI</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>NvdAPI</name>
+        <script><![CDATA[// var NvdAPI = Class.create();
+// NvdAPI.prototype = {
+//     initialize: function() {},
+
+//     DATA_SOURCE_ID: "98061d415367121052831ab0a0490e9d",
+//     importData: function() {
+//         gs.info("NVD API data Import process - Started");
+//         var configuration = this.getNvdApiConfig();
+
+//         if (!configuration.apiKey || !configuration.apiUrl) {
+//             gs.warnning("Api Configuration not found !!");
+//         } else {
+//             this.callNvdApi(configuration);
+//         }
+
+//         gs.info("NVD API Data import process - END");
+//     },
+
+//     getNvdApiConfig: function() {
+//         var configuration = {
+//             "apiUrl": "",
+//             "apiKey": ""
+//         };
+
+//         var gr = new GlideRecord("x_1284814_demo_in_app_configuration");
+//         gr.addQuery("active", true);
+//         gr.query();
+//         if (gr.next()) {
+//             configuration.apiUrl = gr.api_url;
+//             var encryptedApiKey = gr.api_key;
+
+//             decryptedApiKey = encryptedApiKey.getDecryptedValue();
+//             configuration.apiKey = decryptedApiKey;
+//         } else {
+//             gs.info("No Active Configuration Found");
+//         }
+//         return configuration;
+//     },
+
+//     callNvdApi: function(configuration) {
+//         var url = configuration.apiUrl;
+//         var apiKey = configuration.apiKey;
+
+//         gs.info("Calling API Endpoint: " + url);
+
+//         var rm = new sn_ws.RESTMessageV2();
+//         rm.setLogLevel("all");
+//         rm.setEndpoint(url);
+//         rm.setHttpMethod('GET');
+//         rm.setRequestHeader('accept', 'application/json');
+//         rm.setRequestHeader('Key', "apiKey");
+//         rm.setRequestHeader('Value', apiKey);
+
+//         rm.setQueryParameter('resultsPerPage', 5);
+
+//         var response = rm.execute();
+//         var httpStatus = response.getStatusCode();
+//         gs.info("Response Status Code: " + httpStatus);
+//         gs.info("Response Body: " + response.getBody());
+
+//         var responseBody = response.getBody();
+
+//         if (httpStatus == 200) {
+//             var responseJson = JSON.parse(responseBody);
+//             var parsedResponse = this.parseResponse(responseJson);
+
+//             gs.info("Parsed Response: " + JSON.stringify(parsedResponse, null, 2));
+
+//             this.attachResultToDatasource(parsedResponse);
+
+//         } else {
+//             gs.error("Error while calling API Response: " + httpStatus + " - " + responseBody);
+//         }
+//     },
+
+//     parseResponse: function(responseJson) {
+//         var jsonData = responseJson.vulnerabilities;
+//         var output = [];
+
+//         for (var i = 0; i < jsonData.length; i++) {
+//             var cve = jsonData[i].cve;
+//             var newItem = {
+//                 "cve_id": cve.id,
+//                 "published": cve.published,
+//                 "lastModified": cve.lastModified,
+//                 "vulnStatus": cve.vulnStatus,
+//                 "description_en": "",
+//             };
+
+//             for (var j = 0; j < cve.descriptions.length; j++) {
+//                 if (cve.descriptions[j].lang === 'en') {
+//                     newItem.description_en = cve.descriptions[j].value;
+//                     break;
+//                 }
+
+//             }
+//             output.push(newItem);
+
+//         }
+//         return output;
+//     },
+//     // attachResultToDatasource:function(content){
+//     // 	if(!content){
+//     // 		gs.info("No content to attach");
+//     // 		return ;
+//     // 	}
+//     // 	var attachmentApi=new GlideSysAttachment();
+//     // 	var existingAttachments=new GlideRecord("sys_attachment");
+//     // 	existingAttachments.addQuery('table_sys_id',this.DATA_SOURCE_ID);
+//     // 	existingAttachments.query();
+//     // 	while(existingAttachments.next()){
+//     // 		gs.info("deleting exsiting attachments");
+//     // 		attachmentApi.deleteAttachment(existingAttachments.getValue("sys_id"));
+//     // 	}
+//     // 	gs.info("Attaching file to data source");
+
+//     // 	var ds=new GlideRecord("sys_data_source");
+//     // 	if(ds.get(this.DATA_SOURCE_ID)){
+//     // 		var success=attachmentApi.write(ds,"demo_app "+ "-"+ new GlideDateTime().toString() + ".json","application/json",json.stringify(content));
+//     // 		this.executeImport();
+//     // 		gs.info("this is after writing to attachment "+ success );
+//     // 	}
+//     // },
+
+//     attachResultToDatasource: function(content) {
+//         if (!content || content.length === 0) {
+//             gs.info("No content to attach");
+//             return;
+//         }
+
+//         var attachmentApi = new GlideSysAttachment();
+//         var existingAttachments = new GlideRecord("sys_attachment");
+//         existingAttachments.addQuery('table_sys_id', this.DATA_SOURCE_ID);
+//         existingAttachments.query();
+
+//         while (existingAttachments.next()) {
+//             gs.info("Deleting existing attachments");
+//             attachmentApi.deleteAttachment(existingAttachments.getValue("sys_id"));
+//         }
+
+//         gs.info("Attaching JSON file to Data Source");
+
+//         var ds = new GlideRecord("sys_data_source");
+//         if (ds.get(this.DATA_SOURCE_ID)) {
+//             var filename = "cve_data_" + new GlideDateTime().toString() + ".json";
+//             var success = attachmentApi.write(ds, filename, "application/json", JSON.stringify(content));
+
+//             if (success) {
+//                 gs.info("File attached successfully: " + filename);
+//                 this.executeImport();
+//             } else {
+//                 gs.error("Failed to attach file to data source");
+//             }
+//         }
+//     },
+
+
+//     executeImport: function() {
+//         var scheduledImport = new GlideRecord("scheduled_import_set");
+//         if (scheduledImport.get("8c1e95c95367121052831ab0a0490eff")) {
+//             gs.info("Data import in progress");
+//             gs.executeNow(scheduledImport);
+//         }
+//     },
+
+
+//     type: 'NvdAPI'
+// };
+
+var NvdAPI = Class.create();
+NvdAPI.prototype = {
+    initialize: function() {},
+
+    IMPORT_SET_TABLE: "x_1284814_demo_in_isr_nvd_table", // Replace with your Import Set Table name
+    TRANSFORM_MAP_SYS_ID: "5bb619815367121052831ab0a0490eba", // Replace with your Transform Map Sys ID
+
+    importData: function() {
+        gs.info("NVD API Data Import process - Started");
+        var configuration = this.getNvdApiConfig();
+
+        if (!configuration.apiKey || !configuration.apiUrl) {
+            gs.warn("API Configuration not found!!");
+        } else {
+            this.callNvdApi(configuration);
+        }
+
+        gs.info("NVD API Data Import process - END");
+    },
+
+    getNvdApiConfig: function() {
+        var configuration = {
+            "apiUrl": "",
+            "apiKey": ""
+        };
+
+        var gr = new GlideRecord("x_1284814_demo_in_app_configuration");
+        gr.addQuery("active", true);
+        gr.query();
+        if (gr.next()) {
+            configuration.apiUrl = gr.api_url;
+            var encryptedApiKey = gr.api_key;
+
+            decryptedApiKey = encryptedApiKey.getDecryptedValue();
+            configuration.apiKey = decryptedApiKey;
+        } else {
+            gs.info("No Active Configuration Found");
+        }
+        return configuration;
+    },
+
+    callNvdApi: function(configuration) {
+        var url = configuration.apiUrl;
+        var apiKey = configuration.apiKey;
+
+        gs.info("Calling API Endpoint: " + url);
+
+        var rm = new sn_ws.RESTMessageV2();
+        rm.setLogLevel("all");
+        rm.setEndpoint(url);
+        rm.setHttpMethod('GET');
+        rm.setRequestHeader('accept', 'application/json');
+        rm.setRequestHeader('Key', "apiKey");
+        rm.setRequestHeader('Value', apiKey);
+
+        rm.setQueryParameter('resultsPerPage', 5);
+
+        var response = rm.execute();
+        var httpStatus = response.getStatusCode();
+        gs.info("Response Status Code: " + httpStatus);
+        gs.info("Response Body: " + response.getBody());
+
+        var responseBody = response.getBody();
+
+        if (httpStatus == 200) {
+            var responseJson = JSON.parse(responseBody);
+            var parsedResponse = this.parseResponse(responseJson);
+
+            gs.info("Parsed Response: " + JSON.stringify(parsedResponse, null, 2));
+
+            this.insertIntoImportSet(parsedResponse); // Insert data into Import Set Table
+
+        } else {
+            gs.error("Error while calling API Response: " + httpStatus + " - " + responseBody);
+        }
+    },
+
+    parseResponse: function(responseJson) {
+        var jsonData = responseJson.vulnerabilities;
+        var output = [];
+
+        for (var i = 0; i < jsonData.length; i++) {
+            var cve = jsonData[i].cve;
+            var newItem = {
+                "cve_id": cve.id,
+                "published": cve.published,
+                "lastModified": cve.lastModified,
+                "vulnStatus": cve.vulnStatus,
+                "description_en": "",
+            };
+
+            for (var j = 0; j < cve.descriptions.length; j++) {
+                if (cve.descriptions[j].lang === 'en') {
+                    newItem.description_en = cve.descriptions[j].value;
+                    break;
+                }
+            }
+            output.push(newItem);
+        }
+        return output;
+    },
+
+    insertIntoImportSet: function(content) {
+        if (!content || content.length === 0) {
+            gs.info("No content to insert into Import Set");
+            return;
+        }
+
+        gs.info("Inserting data directly into Import Set Table: " + this.IMPORT_SET_TABLE);
+
+        for (var i = 0; i < content.length; i++) {
+            var record = new GlideRecord(this.IMPORT_SET_TABLE); // Insert into Import Set Table
+            record.initialize();
+
+            record.setValue("cve_id", content[i].cve_id);
+            record.setValue("published", content[i].published);
+            record.setValue("last_modified", content[i].lastModified);
+            record.setValue("vuln_status", content[i].vulnStatus);
+            record.setValue("description_en", content[i].description_en);
+
+            record.insert();
+            gs.info("Inserted CVE ID: " + content[i].cve_id);
+        }
+
+        gs.info("Data successfully inserted into Import Set Table.");
+        this.executeTransform(); // Trigger Transform Map
+    },
+
+    executeTransform: function() {
+        var transform = new GlideRecord("sys_transform_map");
+
+        if (transform.get(this.TRANSFORM_MAP_SYS_ID)) {
+            gs.info("Executing Transform Map to move data into the target table");
+            gs.executeNow(transform);
+			gs.info("Done with moving!!");
+        } else {
+            gs.error("Transform Map not found!");
+        }
+    },
+
+    type: 'NvdAPI'
+};
+]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 05:26:23</sys_created_on>
+        <sys_id>7f5f58015363121052831ab0a0490efc</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>NvdAPI</sys_name>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope>
+        <sys_update_name>sys_script_include_7f5f58015363121052831ab0a0490efc</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-05 05:28:29</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="DELETE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 05:05:41</sys_created_on>
+        <sys_id>6e7e94cd5323121052831ab0a0490ec9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1284814_demo_in_nvr_incidents.x_1284814_demo_in.nvr_incidents_user</sys_name>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope>
+        <sys_security_acl display_value="x_1284814_demo_in_nvr_incidents">267e94cd5323121052831ab0a0490ec6</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_6e7e94cd5323121052831ab0a0490ec9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 05:05:41</sys_updated_on>
+        <sys_user_role display_value="x_1284814_demo_in.nvr_incidents_user" name="x_1284814_demo_in.nvr_incidents_user">e27e14cd5323121052831ab0a0490e40</sys_user_role>
+    </sys_security_acl_role>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</application>
+        <file_path/>
+        <instance_id>1a1e816c1b5546d019254089bd4bcb34</instance_id>
+        <instance_name>dev251312</instance_name>
+        <name>sys_security_acl_role_6e7e94cd5323121052831ab0a0490ec9</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role"><sys_security_acl_role action="INSERT_OR_UPDATE"><sys_class_name>sys_security_acl_role</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2025-02-04 05:05:41</sys_created_on><sys_id>6e7e94cd5323121052831ab0a0490ec9</sys_id><sys_mod_count>0</sys_mod_count><sys_name>x_1284814_demo_in_nvr_incidents.x_1284814_demo_in.nvr_incidents_user</sys_name><sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package><sys_policy/><sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope><sys_security_acl display_value="x_1284814_demo_in_nvr_incidents">267e94cd5323121052831ab0a0490ec6</sys_security_acl><sys_update_name>sys_security_acl_role_6e7e94cd5323121052831ab0a0490ec9</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2025-02-04 05:05:41</sys_updated_on><sys_user_role display_value="x_1284814_demo_in.nvr_incidents_user" name="x_1284814_demo_in.nvr_incidents_user">e27e14cd5323121052831ab0a0490e40</sys_user_role></sys_security_acl_role></record_update>]]></payload>
+        <payload_hash>-1415746873</payload_hash>
+        <record_name>x_1284814_demo_in_nvr_incidents.x_1284814_demo_in.nvr_incidents_user</record_name>
+        <reverted_from/>
+        <source>f51950815323121052831ab0a0490eb7</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 05:05:41</sys_created_on>
+        <sys_id>a67e94cd5323121052831ab0a0490ecd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>194cf5991110000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 05:05:41</sys_updated_on>
+        <type>Access Roles</type>
+        <update_guid>aa7e94cdf3231210f33ae8258c2558cc</update_guid>
+        <update_guid_history>aa7e94cdf3231210f33ae8258c2558cc:-1415746873</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="x_1284814_demo_in_nvr_incidents.x_1284814_demo_in.nvr_incidents_user">3488a8c95363121052831ab0a0490e59</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 05:49:31</sys_created_on>
+        <sys_db_object display_value="" name="sys_security_acl_role">sys_security_acl_role</sys_db_object>
+        <sys_id>8f02d98bd86e49bca9b056fd640b7544</sys_id>
+        <sys_metadata>6e7e94cd5323121052831ab0a0490ec9</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1284814_demo_in_nvr_incidents.x_1284814_demo_in.nvr_incidents_user</sys_name>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_parent display_value="">267e94cd5323121052831ab0a0490ec6</sys_parent>
+        <sys_policy/>
+        <sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope>
+        <sys_scope_delete display_value="">43a0ea6ff1c54683974c9dffdae54559</sys_scope_delete>
+        <sys_update_name>sys_security_acl_role_6e7e94cd5323121052831ab0a0490ec9</sys_update_name>
+        <sys_update_version display_value="sys_security_acl_role_6e7e94cd5323121052831ab0a0490ec9">a67e94cd5323121052831ab0a0490ecd</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 05:49:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

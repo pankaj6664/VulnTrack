@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="112a98495323121052831ab0a0490ec0" extends="discovery_credentials" label="App Configuration" max_length="40" name="x_1284814_demo_in_app_configuration" type="collection">
+        <element label="API Key" max_length="255" name="api_key" type="password2"/>
+        <element label="API URL" max_length="4000" name="api_url" type="string"/>
+    </element>
+</database>

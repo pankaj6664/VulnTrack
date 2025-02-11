@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_package_dependency_m2m">
+    <sys_package_dependency_m2m action="INSERT_OR_UPDATE">
+        <dependency display_value="Centralized Connection and Credential" source="com.snc.core.automation.connection_credential">c97125b2e8c2121087debb3e47d14fdc</dependency>
+        <min_version>1.0.0</min_version>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 04:48:28</sys_created_on>
+        <sys_id>e28a90895323121052831ab0a0490ea8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 04:48:28</sys_updated_on>
+    </sys_package_dependency_m2m>
+</record_update>

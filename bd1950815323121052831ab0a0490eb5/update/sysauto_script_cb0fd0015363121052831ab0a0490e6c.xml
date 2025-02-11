@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_script">
+    <sysauto_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time>1970-01-01 00:00:00</entered_time>
+        <max_drift/>
+        <name>NVD Scheduled Job</name>
+        <offset/>
+        <offset_type>0</offset_type>
+        <run_as display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>1</run_dayofweek>
+        <run_period/>
+        <run_start>2025-02-04 05:08:10</run_start>
+        <run_time>1970-01-01 08:00:00</run_time>
+        <run_type>on_demand</run_type>
+        <script><![CDATA[const NvdAPI=new NvdAPI();
+NvdAPI.importData();]]></script>
+        <sys_class_name>sysauto_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 05:09:11</sys_created_on>
+        <sys_id>cb0fd0015363121052831ab0a0490e6c</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>NVD Scheduled Job</sys_name>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope>
+        <sys_update_name>sysauto_script_cb0fd0015363121052831ab0a0490e6c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 10:05:49</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+    </sysauto_script>
+</record_update>

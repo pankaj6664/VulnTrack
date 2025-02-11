@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_wizard_answer">
+    <sys_wizard_answer action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <answer>App Configuration</answer>
+        <button_label/>
+        <dependent_value/>
+        <element/>
+        <name>App Configuration</name>
+        <next_question/>
+        <order>100</order>
+        <payload_name/>
+        <question display_value="Credentials" name="Credentials">067165b2e8c2121087debb3e47d14fa7</question>
+        <roles/>
+        <script/>
+        <sys_class_name>sys_wizard_answer</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2025-02-04 04:48:28</sys_created_on>
+        <sys_id>a68a90895323121052831ab0a0490e9d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>App Configuration</sys_name>
+        <sys_package display_value="Demo Incident App" source="x_1284814_demo_in">bd1950815323121052831ab0a0490eb5</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Demo Incident App">bd1950815323121052831ab0a0490eb5</sys_scope>
+        <sys_update_name>sys_wizard_answer_a68a90895323121052831ab0a0490e9d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2025-02-04 04:48:28</sys_updated_on>
+        <table/>
+        <target_url>x_1284814_demo_in_app_configuration.do</target_url>
+        <type>1</type>
+    </sys_wizard_answer>
+</record_update>

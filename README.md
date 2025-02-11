@@ -1,69 +1,88 @@
-📌 Project Overview
-This project automates the process of fetching vulnerability details from the National Vulnerability Database (NVD) API and creating incidents in ServiceNow. It ensures periodic updates by leveraging Script Includes and a Scheduled Job for proactive vulnerability management.
+# 📌 Project Overview
 
-🚀 Features
-Automated Vulnerability Retrieval – Calls the NVD API to fetch the latest vulnerabilities.
+This project automates the process of fetching vulnerability details from the __National Vulnerability Database (NVD)__ API and creating incidents in __ServiceNow__. It ensures periodic updates by leveraging __Script Includes__ and a __Scheduled__ Job for proactive vulnerability management.
 
-Incident Creation in ServiceNow – Parses API responses and inserts data into the Incident Table.
 
-Scheduled Execution – Uses a Scheduled Job to run at predefined intervals.
 
-Modular & Scalable – Implemented using Script Includes for efficient API handling.
+## 🚀 Features
 
-🛠️ Technology Stack
-ServiceNow (Platform)
+- __Automated Vulnerability Retrieval__ – Calls the __NVD API__ to fetch the latest vulnerabilities.
 
-JavaScript (Script Includes, Scheduled Jobs)
+- __Incident Creation in ServiceNow__  – Parses API responses and inserts data into the __Incident Table__.
 
-REST API (NVD API Integration)
+- __Scheduled Execution__ – Uses a __Scheduled Job__ to run at predefined intervals.
 
-🔧 Installation & Setup
-Step 1: Create Script Includes
-Navigate to System Definition → Script Includes in ServiceNow.
+- __Modular & Scalable__ – Implemented using __Script Includes__ for efficient API handling.
 
-Create a new Script Include for handling API requests.
+## 🛠️ Technology Stack
 
-Mark them as Client Callable = False.
+- __ServiceNow__ (Platform)
 
-Step 2: Create a Scheduled Job
-Go to System Definition → Scheduled Jobs.
+- __JavaScript__ (Script Includes, Scheduled Jobs)
 
-Create a new Scheduled Script Execution.
+- __REST API__ (NVD API Integration)
 
-Set the script to execute at a desired frequency (e.g., Daily).
+## 🔧 Installation & Setup
 
-Step 3: Configure the Transform Map
-Navigate to System Import Sets → Transform Maps.
+#### Step 1: Create Script Includes
 
-Create a new Transform Map named NVD_Transform_Map.
+1. Navigate to __System Definition__ → __Script Includes__ in ServiceNow.
 
-Map API response fields to corresponding Incident Table fields.
+2. Create a new __Script Include__ for handling API requests.
 
-Test and activate the Transform Map.
+3. Mark them as __Client Callable = False__.
 
-Step 4: Test the Integration
-Manually trigger the Scheduled Job.
+#### Step 2: Create a Scheduled Job
 
-Verify that new incidents are created in ServiceNow Incident Table with the latest vulnerability data.
+1. Go to __System Definition → Scheduled Jobs__.
 
-🔄 Workflow Diagram
+2. Create a new __Scheduled Script Execution__.
+
+3. Set the script to execute at a desired frequency (e.g., Daily).
+
+#### Step 3: Configure the Transform Map
+
+1. Navigate to __System Import Sets → Transform Maps__.
+
+2. Create a new Transform Map named __NVD_Transform_Map__.
+
+3. Map API response fields to corresponding __Incident__ Table fields.
+
+4. Test and activate the Transform Map.
+
+#### Step 4: Test the Integration
+
+1. Manually trigger the Scheduled Job.
+
+2. Verify that new __incidents__ are created in __ServiceNow Incident Table__ with the latest vulnerability data.
+
+## 🔄 Workflow Diagram
+
+``
 [Scheduled Job] → [Script Include Calls NVD API] → [Parses Response] → [Transform Map] → [Creates Incidents in ServiceNow]
+``
 
-📝 API Details
-Base URL: https://services.nvd.nist.gov/rest/json/cves/2.0
+## 📝 API Details
 
-Response Format: JSON
+- __Base URL__: ``https://services.nvd.nist.gov/rest/json/cves/2.0``
 
-Example API Call:
+- __Response Format__: JSON
 
+- __Example API Call__:
+
+```var request = new sn_ws.RESTMessageV2();
 request.setEndpoint("https://services.nvd.nist.gov/rest/json/cves/2.0");
 request.setHttpMethod("GET");
 var response = request.execute();
 var responseBody = response.getBody();
-📌 Future Enhancements
-Implement OAuth Authentication for secure API access.
+```
 
-Add Email Notifications for critical vulnerabilities.
+## 📌 Future Enhancements
 
-📧 Contact
-For any questions, reach out to: pankajpawar5259@gmail.com
+- Implement OAuth Authentication for secure API access.
+
+- Add Email Notifications for critical vulnerabilities.
+
+## 📧 Contact
+
+For any questions, reach out to: __pankajpawar5259@gmail.com__
